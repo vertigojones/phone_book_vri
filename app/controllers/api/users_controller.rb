@@ -1,19 +1,25 @@
 class Api::UsersController < ApplicationController
     def index
         @users = User.all
-        render json: @users
+        render json: {
+            users: @users
+        }
       end
     
       def create
         @user = User.create!(user_params)
     
-        render json: @user
+        render json: @users
       end
     
       def show
         @user = User.find(params[:id])
+        @contacts = @user.contacts
     
-        render json: @user
+        render json: {
+            user: @user,
+            contacts: @contacts
+        }
       end
     
       def update

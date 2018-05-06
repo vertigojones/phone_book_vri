@@ -15,39 +15,35 @@ sweety = User.create!({
     phone: "706-315-1290"
 })
 
-Contact.create!({
+owen.contacts.create!(
     name: "Cameron Gunter",
     email: "cameron@gunter.com",
     phone: "404-267-4672",
     address: "1234 Nowhere St, Atlanta, GA. 30324.",
-    relationship: "Work",
-    user_id: owen.id
-})
+    relationship: "Work"
+)
 
-Contact.create!({
+owen.contacts.create!(
     name: "Ruby Liversidge",
     email: "ruby@liversidge.com",
     phone: "404-639-2765",
     address: "65 English Rd, Decatur, GA. 30033.",
-    relationship: "Family",
-    user_id: owen.id
-})
+    relationship: "Family"
+)
 
-Contact.create!({
+sweety.contacts.create!(
     name: "Courtney Lowery",
     email: "courtney@lowery.com",
     phone: "678-537-1286",
     address: "1001 Out There Ln, Mableton, GA. 33654.",
-    relationship: "Friend",
-    user_id: sweety.id
-})
+    relationship: "Friend"
+)
 
-Contact.create!({
+sweety.contacts.create!(
     name: "Farrukh Khalikov",
     email: "farrukh@khalikov.com",
     phone: "404-639-9062",
     address: "6725 Amsterdam Ave, Atlanta, GA. 32876.",
-    relationship: "Business Associate",
-    user_id: sweety.id
-})
+    relationship: "Business Associate"
+)
 
