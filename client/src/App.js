@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import User from "./components/User";
+import Users from "./components/Users";
 import Contacts from "./components/Contacts";
 import { injectGlobal } from "styled-components";
 
@@ -18,7 +18,7 @@ class App extends Component {
         <div>
           <MenuTop />
           <Header />
-          <Route exact path="/" component={User} />
+          <Route exact path="/" component={Users} />
           <Route path="/users/:id" component={Contacts} />
         </div>
       </Router>

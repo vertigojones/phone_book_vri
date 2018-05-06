@@ -18,8 +18,8 @@ const HeaderWrapper = styled.div`
 
   h1 {
     font-family: 'Homemade Apple', cursive;
-    font-size: 64px;
-    padding: 20px;
+    font-size: 72px;
+    padding: 30px;
     color: grey;
   }
 `;

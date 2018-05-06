@@ -16,8 +16,8 @@ class MenuTop extends Component {
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name="contacts"
-          active={activeItem === "contacts"}
+          name="about"
+          active={activeItem === "about"}
           onClick={this.handleItemClick}
         />
 
