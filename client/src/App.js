@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Users from "./components/Users";
-import Contacts from "./components/Contacts";
+import Users from "./components/users/Users";
+import Contacts from "./components/contacts/Contacts";
 import { injectGlobal } from "styled-components";
 
 import MenuTop from "./static/MenuTop";

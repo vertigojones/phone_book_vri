@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import NewUserForm from "./NewUserForm"
+
 import {
   Button,
   Form,
@@ -14,7 +17,8 @@ import {
 
 class Users extends Component {
   state = {
-    users: []
+    users: [],
+    showNewForm: false
   };
 
   getAllUsers = async () => {
@@ -31,6 +35,10 @@ class Users extends Component {
   componentWillMount() {
     this.getAllUsers();
   }
+
+  showNewUserForm = () => {
+    this.setState({ showNewForm: !this.state.showNewForm });
+  };
 
   render() {
     return (
@@ -87,11 +95,14 @@ class Users extends Component {
                   </Segment>
                 </Form>
                 <Message>
-                  New to us? <a href="#">Sign Up</a>
+                  New to us? <Button size='mini' onClick={this.showNewUserForm}>Sign Up</Button> 
                 </Message>
               </Grid.Column>
             </Grid>
           </LoginWrapper>
+          {this.state.showNewForm ? (
+            <NewUserForm getAllUsers={this.getAllUsers} />
+          ) : null}
         </div>
       </PageWrapper>
     );
