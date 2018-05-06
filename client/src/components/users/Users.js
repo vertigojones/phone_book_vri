@@ -25,7 +25,6 @@ class Users extends Component {
     try {
       const response = await axios.get("/api/users");
       this.setState({ users: response.data.users });
-      console.log(this.state);
     } catch (err) {
       console.log(err);
       this.setState({ err: err.message });
@@ -101,7 +100,7 @@ class Users extends Component {
             </Grid>
           </LoginWrapper>
           {this.state.showNewForm ? (
-            <NewUserForm getAllUsers={this.getAllUsers} />
+            <NewUserForm getAllUsers={this.getAllUsers} showNewUserForm={this.showNewUserForm} />
           ) : null}
         </div>
       </PageWrapper>
