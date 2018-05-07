@@ -34,9 +34,12 @@ class SingleUser extends Component {
           src={this.state.user.photo_url}
           size="medium"
           circular
+          centered
           alt="Drummer Profile"
         />
         <h1>{this.state.user.name}</h1>
+        <h3>{this.state.user.email}</h3>
+        <h1>{this.state.user.phone}</h1>
       </ProfileWrapper>
     );
   }
@@ -45,5 +48,5 @@ class SingleUser extends Component {
 export default SingleUser;
 
 const ProfileWrapper = styled.div`
-  align-items: center;
+  text-align: center;
 `;
