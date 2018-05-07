@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import NewUserForm from "./NewUserForm"
+import NewUserForm from "./NewUserForm";
 
 import {
   Button,
@@ -44,8 +44,8 @@ class Users extends Component {
       <PageWrapper>
         {this.state.users.map(user => (
           <Link
-            key={user._id}
-            to={`/${user._id}`}
+            key={user.id}
+            to={`/${user.id}`}
             style={{ textDecoration: "none" }}
           >
             <UserWrapper>
@@ -53,7 +53,6 @@ class Users extends Component {
             </UserWrapper>
           </Link>
         ))}
-
         <div className="login-form">
           <style>{`
       body > div,
@@ -94,13 +93,19 @@ class Users extends Component {
                   </Segment>
                 </Form>
                 <Message>
-                  New to us? <Button size='mini' onClick={this.showNewUserForm}>Sign Up</Button> 
+                  New to us?{" "}
+                  <Button size="mini" onClick={this.showNewUserForm}>
+                    Sign Up
+                  </Button>
                 </Message>
               </Grid.Column>
             </Grid>
           </LoginWrapper>
           {this.state.showNewForm ? (
-            <NewUserForm getAllUsers={this.getAllUsers} showNewUserForm={this.showNewUserForm} />
+            <NewUserForm
+              getAllUsers={this.getAllUsers}
+              showNewUserForm={this.showNewUserForm}
+            />
           ) : null}
         </div>
       </PageWrapper>
@@ -119,4 +124,4 @@ const UserWrapper = styled.div`
 
 const LoginWrapper = styled.div`
   margin: 50px 0px;
-`
+`;
