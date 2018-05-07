@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
-import NewUserForm from "./NewUserForm";
-
 import {
   Button,
   Form,
@@ -14,6 +11,8 @@ import {
   Message,
   Segment
 } from "semantic-ui-react";
+
+import NewUserForm from "./NewUserForm";
 
 class Users extends Component {
   state = {

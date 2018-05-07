@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Image } from "semantic-ui-react";
+import styled from "styled-components";
 import axios from "axios";
 
 class SingleUser extends Component {
@@ -13,8 +15,8 @@ class SingleUser extends Component {
 
   getSingleUser = async () => {
     try {
-      const userId = this.props.match.params.userId;
-      const response = await axios.get(`/api/users/${userId}`);
+      const userId = this.props.match.params.id;
+      const res = await axios.get(`/api/users/${userId}`);
       this.setState({
         user: res.data.user,
         contacts: res.data.contacts
@@ -26,11 +28,22 @@ class SingleUser extends Component {
   };
 
   render() {
-    return <div>
-        Hello from single user
-    {this.state.user.name}
-    </div>;
+    return (
+      <ProfileWrapper>
+        <Image
+          src={this.state.user.photo_url}
+          size="medium"
+          circular
+          alt="Drummer Profile"
+        />
+        <h1>{this.state.user.name}</h1>
+      </ProfileWrapper>
+    );
   }
 }
 
 export default SingleUser;
+
+const ProfileWrapper = styled.div`
+  align-items: center;
+`;

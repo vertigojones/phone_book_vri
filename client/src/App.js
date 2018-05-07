@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Users from "./components/users/Users";
+import SingleUser from "./components/users/SingleUser";
 import Contacts from "./components/contacts/Contacts";
+
 import { injectGlobal } from "styled-components";
 
 import MenuTop from "./static/MenuTop";
@@ -19,6 +21,7 @@ class App extends Component {
           <MenuTop />
           <Header />
           <Route exact path="/" component={Users} />
+          <Route exact path="/:id" component={SingleUser} />
           <Route path="/users/:id" component={Contacts} />
         </div>
       </Router>
