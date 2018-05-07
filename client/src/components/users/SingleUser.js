@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import { Image } from "semantic-ui-react";
+import { Image, Button } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
+
+import UpdateUserForm from "./UpdateUserForm";
 
 class SingleUser extends Component {
   state = {
     user: {},
-    contacts: []
+    contacts: [],
+    updateUser: false
   };
 
   componentDidMount() {
@@ -27,6 +30,10 @@ class SingleUser extends Component {
     }
   };
 
+  toggleShowUpdate = () => {
+    this.setState({ updateUser: !this.state.updateUser });
+  };
+
   render() {
     return (
       <ProfileWrapper>
@@ -40,6 +47,16 @@ class SingleUser extends Component {
         <h1>{this.state.user.name}</h1>
         <h3>{this.state.user.email}</h3>
         <h1>{this.state.user.phone}</h1>
+        <Button onClick={this.toggleShowUpdate}>
+          Update {this.state.user.name}
+        </Button>
+        {this.state.updateUser ? (
+          <UpdateUserForm
+            user={this.state.user}
+            toggleShowUpdate={this.toggleShowUpdate}
+            getSingleUser={this.getSingleUser}
+          />
+        ) : null}
       </ProfileWrapper>
     );
   }
