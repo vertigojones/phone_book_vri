@@ -32,15 +32,15 @@ class SingleUser extends Component {
   };
 
   deleteUser = async () => {
-      try {
-          const userId = this.props.match.params.id;
-          await axios.delete(`/api/users/${userId}`);
-          this.props.history.push("/");
-      } catch (err) {
-          console.log(err);
-          this.setState({ err: err.message })
-      }
-  }
+    try {
+      const userId = this.props.match.params.id;
+      await axios.delete(`/api/users/${userId}`);
+      this.props.history.push("/");
+    } catch (err) {
+      console.log(err);
+      this.setState({ err: err.message });
+    }
+  };
 
   toggleShowUpdate = () => {
     this.setState({ updateUser: !this.state.updateUser });
@@ -67,19 +67,21 @@ class SingleUser extends Component {
             </Card.Content>
           </Card>
         </CardWrapper>
-        <Button negative onClick={this.deleteUser}>
+        <ButtonWrapper>
+          <Button negative onClick={this.deleteUser}>
             Delete {this.state.user.name}
           </Button>
-        <Button onClick={this.toggleShowUpdate}>
-          Update {this.state.user.name}
-        </Button>
-        {this.state.updateUser ? (
-          <UpdateUserForm
-            user={this.state.user}
-            toggleShowUpdate={this.toggleShowUpdate}
-            getSingleUser={this.getSingleUser}
-          />
-        ) : null}
+          <Button onClick={this.toggleShowUpdate}>
+            Update {this.state.user.name}
+          </Button>
+          {this.state.updateUser ? (
+            <UpdateUserForm
+              user={this.state.user}
+              toggleShowUpdate={this.toggleShowUpdate}
+              getSingleUser={this.getSingleUser}
+            />
+          ) : null}
+        </ButtonWrapper>
         <Divider />
         <Contacts
           userId={this.state.user.id}
@@ -98,5 +100,9 @@ const ProfileWrapper = styled.div`
 `;
 
 const CardWrapper = styled.div`
+  margin: 30px;
+`;
+
+const ButtonWrapper = styled.div`
   margin: 30px;
 `;

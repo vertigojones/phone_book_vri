@@ -11,12 +11,6 @@ class MenuTop extends Component {
           to="/"
           name="home"
         />
-        <Menu.Item
-          as={ Link }
-          to="/about"
-          name="about"
-        />
-
         <Menu.Menu position="right">
           <Dropdown item text="Language">
             <Dropdown.Menu>
