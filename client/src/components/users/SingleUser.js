@@ -31,6 +31,17 @@ class SingleUser extends Component {
     }
   };
 
+  deleteUser = async () => {
+      try {
+          const userId = this.props.match.params.id;
+          await axios.delete(`/api/users/${userId}`);
+          this.props.history.push("/");
+      } catch (err) {
+          console.log(err);
+          this.setState({ err: err.message })
+      }
+  }
+
   toggleShowUpdate = () => {
     this.setState({ updateUser: !this.state.updateUser });
   };
@@ -43,7 +54,7 @@ class SingleUser extends Component {
           size="medium"
           circular
           centered
-          alt="Drummer Profile"
+          alt="User Profile Picture"
         />
         <CardWrapper>
           <Card centered>
@@ -56,6 +67,9 @@ class SingleUser extends Component {
             </Card.Content>
           </Card>
         </CardWrapper>
+        <Button negative onClick={this.deleteUser}>
+            Delete {this.state.user.name}
+          </Button>
         <Button onClick={this.toggleShowUpdate}>
           Update {this.state.user.name}
         </Button>
