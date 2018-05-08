@@ -1,24 +1,20 @@
 import React, { Component } from "react";
 import { Button, Dropdown, Menu } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class MenuTop extends Component {
-  state = { activeItem: "home" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { activeItem } = this.state;
     return (
       <Menu size="massive">
         <Menu.Item
+          as={ Link }
+          to="/"
           name="home"
-          active={activeItem === "home"}
-          onClick={this.handleItemClick}
         />
         <Menu.Item
+          as={ Link }
+          to="/about"
           name="about"
-          active={activeItem === "about"}
-          onClick={this.handleItemClick}
         />
 
         <Menu.Menu position="right">

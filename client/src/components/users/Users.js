@@ -124,5 +124,5 @@ const UserWrapper = styled.div`
 
 const LoginWrapper = styled.div`
   margin: 50px 0px;
-  padding: 100px 0px;
+  padding: 90px 0px;
 `;
