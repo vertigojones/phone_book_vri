@@ -102,7 +102,7 @@ class SingleUser extends Component {
         </ButtonWrapper>
         <Divider />
         <SearchWrapper>
-          <SearchBar searchIdeas={this.searchContacts.bind(this)} />
+          <SearchBar searchContacts={this.searchContacts.bind(this)} />
         </SearchWrapper>
         <Contacts
           userId={this.state.user.id}
