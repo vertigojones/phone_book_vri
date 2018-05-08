@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Image, Card, Divider, Button, Search, Grid, Header } from "semantic-ui-react";
+import {
+  Image,
+  Card,
+  Divider,
+  Button,
+  Search,
+  Grid,
+  Header
+} from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -15,6 +23,8 @@ class SingleUser extends Component {
   };
 
   componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+    this.setState({ contacts: contacts, allContacts: contacts });
     this.getSingleUser();
   }
 
@@ -46,6 +56,13 @@ class SingleUser extends Component {
   toggleShowUpdate = () => {
     this.setState({ updateUser: !this.state.updateUser });
   };
+
+  searchContacts(query) {
+    let contacts = this.state.allContacts.filter(contact => {
+      return contact.name.includes(query) || contact.number.includes(query);
+    });
+    this.setState({ contacts: contacts });
+  }
 
   render() {
     return (
@@ -84,7 +101,9 @@ class SingleUser extends Component {
           ) : null}
         </ButtonWrapper>
         <Divider />
-        <SearchBar />
+        <SearchWrapper>
+          <SearchBar searchIdeas={this.searchContacts.bind(this)} />
+        </SearchWrapper>
         <Contacts
           userId={this.state.user.id}
           contacts={this.state.contacts}
@@ -108,3 +127,7 @@ const CardWrapper = styled.div`
 const ButtonWrapper = styled.div`
   margin: 30px;
 `;
+
+const SearchWrapper = styled.div`
+    text-align: center;
+`
