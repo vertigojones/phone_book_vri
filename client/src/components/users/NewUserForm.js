@@ -101,7 +101,7 @@ class NewUserForm extends Component {
 export default NewUserForm;
 
 const FormWrapper = styled.div`
-  width: 36vw;
+  width: 355px;
   margin: 0 auto;
   padding-bottom: 30px;
 `;

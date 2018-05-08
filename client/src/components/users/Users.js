@@ -93,7 +93,7 @@ class Users extends Component {
                 </Form>
                 <Message>
                   New to us?{" "}
-                  <Button size="mini" onClick={this.showNewUserForm}>
+                  <Button size="small" onClick={this.showNewUserForm}>
                     Sign Up
                   </Button>
                 </Message>
@@ -114,7 +114,8 @@ class Users extends Component {
 
 export default Users;
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+`;
 
 const UserWrapper = styled.div`
   text-align: center;
@@ -123,5 +124,5 @@ const UserWrapper = styled.div`
 
 const LoginWrapper = styled.div`
   margin: 50px 0px;
-  padding-top: 100px;
+  padding: 100px 0px;
 `;

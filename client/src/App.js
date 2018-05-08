@@ -8,6 +8,7 @@ import { injectGlobal } from "styled-components";
 
 import MenuTop from "./static/MenuTop";
 import Header from "./static/Header";
+import Footer from "./static/Footer"
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path="/" component={Users} />
           <Route exact path="/:id" component={SingleUser} />
           <Route path="/users/:id" component={Contacts} />
+          <Footer />
         </div>
       </Router>
     );

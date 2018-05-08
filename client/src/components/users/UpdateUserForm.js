@@ -97,7 +97,7 @@ class UpdateUserForm extends Component {
 export default UpdateUserForm;
 
 const FormWrapper = styled.div`
-  width: 36vw;
+  width: 355px;
   margin: 0 auto;
   padding: 30px;
 `;

@@ -28,7 +28,7 @@ class Contacts extends Component {
                     alt="Face Placeholder"
                   />
                   <Card.Content>
-                    <Card.Header><h2>{contact.name}</h2></Card.Header>
+                    <Card.Header><h3>{contact.name}</h3></Card.Header>
                     <Card.Meta>
                       <h3>{contact.phone}</h3>
                     </Card.Meta>
