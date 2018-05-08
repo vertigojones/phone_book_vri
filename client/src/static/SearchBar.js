@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Search } from "semantic-ui-react";
-import styled from "styled-components";
-import axios from "axios";
 
 class SearchBar extends Component {
   handleSearch(event) {

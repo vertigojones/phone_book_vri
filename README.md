@@ -4,14 +4,13 @@ Welcome to Contactr!
 
 Contactr is a personal address book that allows you to add your contacts, organize them, and even call them right from the app (in the not-too-distant future).
 
-* GitHub link: https://github.com/vertigojones/phone_book_vri
 * Heroku: https://owen-contactr.herokuapp.com/
 
 ---
 
 ### Achievements
 
-As I didn't get much time to spend on this (with a full-time job and busy weekend), I only managed to get full CRUD on the first model (Users). The second model (Contacts) is full CRUD on the back-end (Rails), but only READ on the front-end (React). I have been trying to get a search bar working by using the local storage, but didn't quite get it figured out in time.
+As I didn't get much time to spend on this (with a full-time job and busy weekend), I only managed to get full CRUD on the first model (Users). The second model (Contacts) is full CRUD on the back-end (Rails), but only READ on the front-end (React). I have been trying to get a search bar working by using the local storage, but didn't quite get it figured out in time. 
 
 The log-in feature (User authentication) was a stretch goal that I didn't quite get to, but the form is there on the landing page.
 

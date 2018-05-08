@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { Card, Image } from "semantic-ui-react";
 import styled from "styled-components";

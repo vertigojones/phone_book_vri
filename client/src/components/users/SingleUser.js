@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Image,
-  Card,
-  Divider,
-  Button,
-  Search,
-  Grid,
-  Header
-} from "semantic-ui-react";
+import { Image, Card, Divider, Button } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -58,7 +50,7 @@ class SingleUser extends Component {
   };
 
   searchContacts(query) {
-    let contacts = this.state.allContacts.filter(contact => {
+    let contacts = this.state.contacts.filter(contact => {
       return contact.name.includes(query) || contact.number.includes(query);
     });
     this.setState({ contacts: contacts });
@@ -129,5 +121,5 @@ const ButtonWrapper = styled.div`
 `;
 
 const SearchWrapper = styled.div`
-    text-align: center;
-`
+  text-align: center;
+`;
