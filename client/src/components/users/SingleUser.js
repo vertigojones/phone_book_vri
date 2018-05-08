@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, Button } from "semantic-ui-react";
+import { Image, Card, Button } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -44,9 +44,17 @@ class SingleUser extends Component {
           centered
           alt="Drummer Profile"
         />
-        <h1>{this.state.user.name}</h1>
-        <h3>{this.state.user.email}</h3>
-        <h1>{this.state.user.phone}</h1>
+        <CardWrapper>
+          <Card centered>
+            <Card.Content>
+              <Card.Header>{this.state.user.name}</Card.Header>
+              <Card.Meta>{this.state.user.phone}</Card.Meta>
+              <Card.Description>
+                Email: {this.state.user.email}
+              </Card.Description>
+            </Card.Content>
+          </Card>
+        </CardWrapper>
         <Button onClick={this.toggleShowUpdate}>
           Update {this.state.user.name}
         </Button>
@@ -67,3 +75,7 @@ export default SingleUser;
 const ProfileWrapper = styled.div`
   text-align: center;
 `;
+
+const CardWrapper = styled.div`
+    margin: 30px;
+`
