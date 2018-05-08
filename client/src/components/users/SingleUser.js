@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Image, Card, Divider, Button } from "semantic-ui-react";
+import { Image, Card, Divider, Button, Search, Grid, Header } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
 
 import UpdateUserForm from "./UpdateUserForm";
 import Contacts from "../contacts/Contacts";
+import SearchBar from "../../static/SearchBar";
 
 class SingleUser extends Component {
   state = {
@@ -83,6 +84,7 @@ class SingleUser extends Component {
           ) : null}
         </ButtonWrapper>
         <Divider />
+        <SearchBar />
         <Contacts
           userId={this.state.user.id}
           contacts={this.state.contacts}
