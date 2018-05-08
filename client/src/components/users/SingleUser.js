@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Image, Card, Button } from "semantic-ui-react";
+import { Image, Card, Divider, Button } from "semantic-ui-react";
 import styled from "styled-components";
 import axios from "axios";
 
 import UpdateUserForm from "./UpdateUserForm";
+import Contacts from "../contacts/Contacts";
 
 class SingleUser extends Component {
   state = {
@@ -65,6 +66,12 @@ class SingleUser extends Component {
             getSingleUser={this.getSingleUser}
           />
         ) : null}
+        <Divider />
+        <Contacts
+          userId={this.state.user.id}
+          contacts={this.state.contacts}
+          getSingleUser={this.getSingleUser}
+        />
       </ProfileWrapper>
     );
   }
@@ -77,5 +84,5 @@ const ProfileWrapper = styled.div`
 `;
 
 const CardWrapper = styled.div`
-    margin: 30px;
-`
+  margin: 30px;
+`;
